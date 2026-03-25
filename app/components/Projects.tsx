@@ -17,48 +17,48 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Parallax Universe",
-    category: "Web Experience",
+    title: "Football Tactics App",
+    category: "Coaching Tool",
     description:
-      "An immersive 3D scrollytelling site built for a space exploration startup. Features WebGL particle systems and scroll-linked camera paths.",
-    tech: ["Next.js", "Three.js", "GSAP", "GLSL"],
+      "A comprehensive coaching application designed for football coaches to strategize and visualize plays. Features interactive canvas for tactical board setup and real-time play analysis.",
+    tech: ["Next.js", "React", "Canvas API", "Tailwind CSS"],
     year: "2024",
-    gradient: "from-purple-900/40 to-violet-900/20",
-    glowColor: "rgba(168, 85, 247, 0.25)",
-    accentColor: "#a855f7",
+    gradient: "from-green-900/40 to-emerald-900/20",
+    glowColor: "rgba(34, 197, 94, 0.25)",
+    accentColor: "#22c55e",
   },
   {
     id: 2,
-    title: "Motion Design System",
-    category: "Design Engineering",
+    title: "MID - Search Engine",
+    category: "Backend Engineering",
     description:
-      "A comprehensive design system with 60fps animation primitives. Adopted by a team of 30+ designers and engineers across 4 product lines.",
-    tech: ["React", "Framer Motion", "Storybook", "Figma API"],
+      "Mid-level search engine leveraging data structures and algorithms principles. Backend built with Python, frontend powered by Flask for efficient query processing and ranking.",
+    tech: ["Python", "Flask", "DSA", "Search Algorithms"],
     year: "2024",
-    gradient: "from-cyan-900/40 to-teal-900/20",
+    gradient: "from-blue-900/40 to-cyan-900/20",
     glowColor: "rgba(6, 182, 212, 0.25)",
     accentColor: "#06b6d4",
   },
   {
     id: 3,
-    title: "AI Creative Studio",
-    category: "Product Design",
+    title: "Lotto App",
+    category: "3D Interactive",
     description:
-      "A generative AI interface that lets creators craft visual narratives through natural language. Real-time canvas with collaborative editing.",
-    tech: ["Next.js", "Stable Diffusion", "WebSockets", "Canvas API"],
-    year: "2023",
+      "A stunning 3D lottery application with immersive visual effects. Features particle systems, smooth animations, and interactive UI for lottery number selection and results visualization.",
+    tech: ["Three.js", "React", "Next.js", "Express", "WebGL"],
+    year: "2024",
     gradient: "from-pink-900/40 to-rose-900/20",
     glowColor: "rgba(236, 72, 153, 0.25)",
     accentColor: "#ec4899",
   },
   {
     id: 4,
-    title: "Kinetic Typography",
-    category: "Creative Coding",
+    title: "Male Singers Site",
+    category: "Creative UI",
     description:
-      "An experimental typography engine where every character reacts to audio frequencies in real-time. Featured on Awwwards.",
-    tech: ["Vanilla JS", "Web Audio API", "SVG Animation", "GSAP"],
-    year: "2023",
+      "A beautifully designed showcase website highlighting male singers with focus on user interface creativity. Animated elements, smooth transitions, and responsive design demonstrate frontend artistry.",
+    tech: ["React", "Express", "HTML/CSS", "Tailwind CSS", "Animations"],
+    year: "2024",
     gradient: "from-amber-900/40 to-orange-900/20",
     glowColor: "rgba(245, 158, 11, 0.25)",
     accentColor: "#f59e0b",
@@ -83,23 +83,23 @@ const cardVariants = {
 
 export default function Projects() {
   return (
-    <section className="relative bg-[#121212] py-32 px-6 md:px-12 lg:px-24">
+    <section className="relative bg-[#121212] py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-24">
       {/* Section header */}
-      <div className="max-w-7xl mx-auto mb-20">
+      <div className="max-w-7xl mx-auto mb-12 sm:mb-16 md:mb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4"
+          <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2 sm:mb-4"
             style={{ color: "#a855f7" }}>
             Selected Work
           </p>
           <h2
             className="font-black leading-none tracking-tight"
             style={{
-              fontSize: "clamp(2.5rem, 7vw, 6rem)",
+              fontSize: "clamp(2rem, 7vw, 5rem)",
               background: "linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.5) 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -113,7 +113,7 @@ export default function Projects() {
 
       {/* Grid */}
       <motion.div
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -126,15 +126,15 @@ export default function Projects() {
 
       {/* Bottom CTA */}
       <motion.div
-        className="max-w-7xl mx-auto mt-20 text-center"
+        className="max-w-7xl mx-auto mt-16 sm:mt-20 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <a
-          href="mailto:hello@example.com"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-300"
+          href="mailto:danishsohail75006@gmail.com"
+          className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-xs sm:text-sm tracking-wide transition-all duration-300"
           style={{
             background: "linear-gradient(135deg, #a855f7, #06b6d4)",
             color: "#fff",
@@ -197,9 +197,9 @@ function ProjectCard({ project }: { project: Project }) {
       />
 
       {/* Content */}
-      <div className="relative p-8 md:p-10">
+      <div className="relative p-6 sm:p-8 md:p-10">
         {/* Top row */}
-        <div className="flex items-start justify-between mb-8">
+        <div className="flex items-start justify-between mb-6 sm:mb-8">
           <div>
             <span
               className="text-xs font-semibold tracking-widest uppercase"
@@ -208,12 +208,12 @@ function ProjectCard({ project }: { project: Project }) {
               {project.category}
             </span>
           </div>
-          <span className="text-white/20 font-mono text-sm">{project.year}</span>
+          <span className="text-white/20 font-mono text-xs sm:text-sm">{project.year}</span>
         </div>
 
         {/* Title */}
         <h3
-          className="font-black text-3xl md:text-4xl tracking-tight text-white mb-4 leading-none group-hover:text-gradient transition-all duration-300"
+          className="font-black text-2xl sm:text-3xl md:text-4xl tracking-tight text-white mb-4 leading-none group-hover:text-gradient transition-all duration-300"
           style={{
             background: "none",
             WebkitTextFillColor: "inherit",
@@ -223,7 +223,7 @@ function ProjectCard({ project }: { project: Project }) {
         </h3>
 
         {/* Description */}
-        <p className="text-white/50 text-sm leading-relaxed mb-8 font-light">
+        <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8 font-light">
           {project.description}
         </p>
 
@@ -232,7 +232,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className="text-xs font-medium px-3 py-1.5 rounded-full"
+              className="text-xs font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-full"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -246,15 +246,15 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Arrow */}
         <motion.div
-          className="absolute bottom-8 right-8 md:bottom-10 md:right-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={{ x: -8 }}
           whileHover={{ x: 0 }}
         >
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center"
+            className="w-8 sm:w-10 h-8 sm:h-10 rounded-full flex items-center justify-center"
             style={{ background: project.accentColor }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8h10M9 4l4 4-4 4"
                 stroke="#fff"

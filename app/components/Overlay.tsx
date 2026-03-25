@@ -78,15 +78,15 @@ function TextPanel({
   );
 
   const alignClass = {
-    center: "items-center text-center px-4 md:px-8",
-    left: "items-start text-left px-4 md:px-8 lg:pl-20",
-    right: "items-end text-right px-4 md:px-8 lg:pr-20",
+    center: "items-center text-center px-4 sm:px-6 md:px-8",
+    left: "items-start text-left px-4 sm:px-6 md:px-8 lg:pl-20",
+    right: "items-end text-right px-4 sm:px-6 md:px-8 lg:pr-20",
   }[section.align];
 
   return (
     <motion.div
       style={{ opacity, y }}
-      className={`absolute inset-0 z-10 flex flex-col justify-center pointer-events-none ${alignClass}`}
+      className={`absolute inset-0 z-10 flex flex-col justify-center pointer-events-auto ${alignClass}`}
     >
       {/* Main heading */}
       <h2
@@ -121,6 +121,19 @@ function TextPanel({
 }
 
 export default function Overlay({ scrollYProgress }: OverlayProps) {
+  const FIRST_SECTION = sections[0];
+  const opacity = useTransform(
+    scrollYProgress,
+    [FIRST_SECTION.startFade, FIRST_SECTION.peakStart, FIRST_SECTION.peakEnd, FIRST_SECTION.endFade],
+    [0, 1, 1, 0]
+  );
+
+  const y = useTransform(
+    scrollYProgress,
+    [FIRST_SECTION.startFade, FIRST_SECTION.endFade],
+    [FIRST_SECTION.yFrom, FIRST_SECTION.yTo]
+  );
+
   return (
     <div 
       className="absolute inset-0 z-10 pointer-events-none"
@@ -132,6 +145,46 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
           scrollYProgress={scrollYProgress}
         />
       ))}
+
+      {/* GitHub Button - outside pointer-events-none container */}
+      <motion.div
+        style={{ opacity, y }}
+        className="absolute inset-0 z-20 flex flex-col justify-center items-center pointer-events-auto"
+      >
+        <motion.a
+          href="https://github.com/DanTastic-Dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-40 sm:mt-48 inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm tracking-wide transition-all duration-300"
+          style={{
+            background: "linear-gradient(135deg, #a855f7, #06b6d4)",
+            color: "#fff",
+            boxShadow: "0 0 30px rgba(168,85,247,0.3), 0 0 60px rgba(6,182,212,0.1)",
+            cursor: "pointer",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+            (e.currentTarget as HTMLElement).style.boxShadow =
+              "0 0 40px rgba(168,85,247,0.5), 0 0 80px rgba(6,182,212,0.2)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+            (e.currentTarget as HTMLElement).style.boxShadow =
+              "0 0 30px rgba(168,85,247,0.3), 0 0 60px rgba(6,182,212,0.1)";
+          }}
+        >
+          Visit GitHub
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.a>
+      </motion.div>
 
       {/* Scroll indicator — fades out after 5% scroll */}
       <ScrollIndicator scrollYProgress={scrollYProgress} />

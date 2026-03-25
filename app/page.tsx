@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
+import SkillsSection from "./components/SkillsSection";
 
 // Client-only canvas component (avoids SSR issues with window/canvas APIs)
 const ScrollyCanvas = dynamic(() => import("./components/ScrollyCanvas"), {
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* ── Work / Projects Section ── */}
       <Projects />
+
+      {/* ── Skills Section ── */}
+      <SkillsSection />
 
       {/* ── Footer ── */}
       <Footer />
