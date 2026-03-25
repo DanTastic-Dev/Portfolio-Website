@@ -94,9 +94,9 @@ function TextPanel({
         style={{
           fontSize: "clamp(1.5rem, 5vw, 4.5rem)",
           color: "rgba(255, 255, 255, 0.95)",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif",
-          fontWeight: "800",
-          letterSpacing: "-0.02em",
+          fontFamily: "'Bebas Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif",
+          fontWeight: "700",
+          letterSpacing: "0.05em",
           lineHeight: "1.1",
         }}
       >
@@ -105,12 +105,12 @@ function TextPanel({
 
       {/* Sub text with subtle accent */}
       <h3
-        className="select-none mt-2 px-2 sm:px-0"
+        className="select-none mt-0 px-2 sm:px-0"
         style={{
           fontSize: "clamp(0.75rem, 2.5vw, 1.6rem)",
-          color: "rgba(160, 140, 255, 0.8)",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif",
-          fontWeight: "600",
+          color: "#ffffff",
+          fontFamily: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif",
+          fontWeight: "400",
           letterSpacing: "0.02em",
         }}
       >
