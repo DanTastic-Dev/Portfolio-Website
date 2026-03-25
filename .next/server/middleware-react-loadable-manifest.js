@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\page.tsx -> ./components/ScrollyCanvas\":{\"id\":\"app\\\\page.tsx -> ./components/ScrollyCanvas\",\"files\":[\"static/chunks/_app-pages-browser_app_components_ScrollyCanvas_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"app\\\\page.tsx -> ./components/ScrollyCanvas":{"id":5373,"files":["static/chunks/373.636b0c748fd746e1.js"]}}';
